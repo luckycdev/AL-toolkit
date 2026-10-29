@@ -198,6 +198,13 @@ exportModule({
 				}
 			}
 		});
+		//list table columns, the same panel as on the list pages
+		if(typeof ListTable !== "undefined"){
+			altoolkitSettings.appendChild(create("hr"));
+			let listTableSettings = create("div","#listTableSettings",false,altoolkitSettings);
+			create("p",false,translate("$listTable_settingsHelp"),listTableSettings);
+			ListTable.buildSettings(listTableSettings)
+		}
 		let titleAliasSettings = create("div");
 		let titleAliasInstructions = create("p");
 		titleAliasInstructions.innerText = translate("$settings_aliasHelp");
